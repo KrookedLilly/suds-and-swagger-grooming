@@ -62,7 +62,26 @@
       "reviewCount": "50"
     },
     "priceRange": "$$",
-    "description": "Professional pet grooming and boarding in Spokane Valley, WA. 20+ years experience. All breeds, all sizes."
+    "description": "Professional pet grooming and boarding in Spokane Valley, WA. 20+ years experience. AKC S.A.F.E. certified. All breeds, all sizes.",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 47.6535,
+      "longitude": -117.2753
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Pet Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full Dog Grooming" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cat Grooming" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "De-Shedding" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bath & Brush" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Nail Trimming" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Overnight Pet Boarding" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Extended Stay Boarding" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Behavioral Consultations" } }
+      ]
+    }
   }
   </script>
   <style>
@@ -85,6 +104,7 @@
         <a href="#about" class="hover:text-cyan-300 transition-colors">About</a>
         <a href="#gallery" class="hover:text-cyan-300 transition-colors">Gallery</a>
         <a href="#testimonials" class="hover:text-cyan-300 transition-colors">Reviews</a>
+        <a href="#faq" class="hover:text-cyan-300 transition-colors">FAQ</a>
         <a href="#contact" class="hover:text-cyan-300 transition-colors">Contact</a>
         <a href="tel:+15097148076" class="bg-rose-600 hover:bg-pink-700 text-white px-4 py-2 rounded-full transition-colors">(509) 714-8076</a>
       </div>
@@ -105,6 +125,7 @@
       <a @click="open = false" href="#about" class="block py-2 hover:text-cyan-300 transition-colors">About</a>
       <a @click="open = false" href="#gallery" class="block py-2 hover:text-cyan-300 transition-colors">Gallery</a>
       <a @click="open = false" href="#testimonials" class="block py-2 hover:text-cyan-300 transition-colors">Reviews</a>
+      <a @click="open = false" href="#faq" class="block py-2 hover:text-cyan-300 transition-colors">FAQ</a>
       <a @click="open = false" href="#contact" class="block py-2 hover:text-cyan-300 transition-colors">Contact</a>
       <a href="tel:+15097148076" class="block text-center bg-rose-600 hover:bg-pink-700 text-white px-4 py-3 rounded-full transition-colors mt-2">Call (509) 714-8076</a>
     </div>
@@ -445,7 +466,7 @@
         <!-- Map -->
         <div class="rounded-2xl overflow-hidden shadow-lg h-80 md:h-full min-h-[320px]">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2686.5!2d-117.2753!3d47.6535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDfCsDM5JzEyLjYiTiAxMTfCsDE2JzMxLjEiVw!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+            src="https://www.google.com/maps?q=11516+E+Sprague+Ave,+Spokane+Valley,+WA+99206&output=embed"
             width="100%"
             height="100%"
             style="border:0;"
@@ -455,6 +476,77 @@
             title="Suds & Swagger Pet Grooming Location">
           </iframe>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section id="faq" class="py-16 md:py-20 bg-teal-50">
+    <div class="max-w-3xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <p class="text-cyan-600 font-heading font-bold text-sm uppercase tracking-widest mb-2">Got Questions?</p>
+        <h2 class="font-heading text-3xl md:text-4xl font-extrabold text-gray-800">Common Questions</h2>
+      </div>
+      <div x-data="{ active: null }" class="space-y-3">
+        <div class="bg-white border border-cyan-200 rounded-xl overflow-hidden">
+          <button @click="active = active === 1 ? null : 1" class="w-full text-left px-6 py-5 flex items-center justify-between gap-4 focus:outline-none">
+            <span class="font-heading font-bold text-gray-800">Do you offer both grooming and boarding?</span>
+            <svg :class="active === 1 ? 'rotate-180' : ''" class="h-5 w-5 text-cyan-600 transition-transform flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+          </button>
+          <div x-show="active === 1" x-collapse x-cloak class="px-6 pb-5">
+            <p class="text-gray-600 text-sm leading-relaxed">Yes! Suds & Swagger offers both professional pet grooming and overnight boarding. Your pets stay with Angel personally — not in a large facility. It's a true home-away-from-home experience with personalized attention.</p>
+          </div>
+        </div>
+        <div class="bg-white border border-cyan-200 rounded-xl overflow-hidden">
+          <button @click="active = active === 2 ? null : 2" class="w-full text-left px-6 py-5 flex items-center justify-between gap-4 focus:outline-none">
+            <span class="font-heading font-bold text-gray-800">What breeds and sizes do you groom?</span>
+            <svg :class="active === 2 ? 'rotate-180' : ''" class="h-5 w-5 text-cyan-600 transition-transform flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+          </button>
+          <div x-show="active === 2" x-collapse x-cloak class="px-6 pb-5">
+            <p class="text-gray-600 text-sm leading-relaxed">All breeds, all sizes — from tiny teacup breeds to 100-pound German Shepherds. Angel also grooms cats. With 20+ years of experience, she's seen and groomed just about every breed out there.</p>
+          </div>
+        </div>
+        <div class="bg-white border border-cyan-200 rounded-xl overflow-hidden">
+          <button @click="active = active === 3 ? null : 3" class="w-full text-left px-6 py-5 flex items-center justify-between gap-4 focus:outline-none">
+            <span class="font-heading font-bold text-gray-800">What is AKC S.A.F.E. certification?</span>
+            <svg :class="active === 3 ? 'rotate-180' : ''" class="h-5 w-5 text-cyan-600 transition-transform flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+          </button>
+          <div x-show="active === 3" x-collapse x-cloak class="px-6 pb-5">
+            <p class="text-gray-600 text-sm leading-relaxed">AKC S.A.F.E. (Safety, Assurance, Fundamentals, Education) is a certification from the American Kennel Club that ensures groomers meet the highest standards of safety, skill, and animal care. It means your pet is in trained, qualified hands.</p>
+          </div>
+        </div>
+        <div class="bg-white border border-cyan-200 rounded-xl overflow-hidden">
+          <button @click="active = active === 4 ? null : 4" class="w-full text-left px-6 py-5 flex items-center justify-between gap-4 focus:outline-none">
+            <span class="font-heading font-bold text-gray-800">What's boarding like with Angel?</span>
+            <svg :class="active === 4 ? 'rotate-180' : ''" class="h-5 w-5 text-cyan-600 transition-transform flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+          </button>
+          <div x-show="active === 4" x-collapse x-cloak class="px-6 pb-5">
+            <p class="text-gray-600 text-sm leading-relaxed">Your pets stay directly with Angel — it's not a kennel or facility. They get personalized attention, regular activity, and genuine love. Extended stays are available too. Clients describe it as leaving their pet with family.</p>
+          </div>
+        </div>
+        <div class="bg-white border border-cyan-200 rounded-xl overflow-hidden">
+          <button @click="active = active === 5 ? null : 5" class="w-full text-left px-6 py-5 flex items-center justify-between gap-4 focus:outline-none">
+            <span class="font-heading font-bold text-gray-800">Do you offer behavioral consultations?</span>
+            <svg :class="active === 5 ? 'rotate-180' : ''" class="h-5 w-5 text-cyan-600 transition-transform flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+          </button>
+          <div x-show="active === 5" x-collapse x-cloak class="px-6 pb-5">
+            <p class="text-gray-600 text-sm leading-relaxed">Yes — Angel offers creative solutions to behavioral issues. With 20+ years of experience, she can help with grooming anxiety, dietary recommendations, and other pet challenges. She truly goes above and beyond standard grooming.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FINAL CTA ========== -->
+  <section class="bg-gradient-to-r from-cyan-700 to-cyan-900 py-14 md:py-16">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="font-heading text-2xl md:text-3xl font-extrabold text-white mb-4">Give Your Pet the Swagger Treatment</h2>
+      <p class="text-cyan-100 text-lg mb-8 max-w-xl mx-auto">Whether they need a fresh groom or a cozy place to stay — Angel and Suds & Swagger have you covered.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="tel:+15097148076" class="inline-flex items-center gap-2 bg-rose-600 hover:bg-rose-500 text-white font-bold text-lg px-8 py-4 rounded-full shadow-lg transition">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+          Call (509) 714-8076
+        </a>
       </div>
     </div>
   </section>
